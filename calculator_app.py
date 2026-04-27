@@ -26,7 +26,13 @@ if st.button("Calculate"):
 import math
 
 st.header("Scientific Functions")
-operation_sci = st.selectbox("Choose scientific operation", ["Square Root", "Power", "Sin", "Cos", "Tan"])
+operation_sci = st.selectbox("Choose scientific operation", 
+                             ["Square Root", 
+                              "Power", 
+                              "Sin", 
+                              "Cos", 
+                              "Tan", 
+                              "Log base 10"])
 
 value = st.number_input("Enter value", value=0.0)
 power = st.number_input("Enter power (if applicable)", value=2.0)
@@ -42,5 +48,7 @@ if st.button("Calculate Scientific"):
         result = math.cos(math.radians(value))
     elif operation_sci == "Tan":
         result = math.tan(math.radians(value))
+    elif operation_sci == "Log base 10":
+        result = math.log10(value)
 
     st.success(f"Result: {result}")
